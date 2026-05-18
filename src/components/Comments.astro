@@ -3,11 +3,11 @@ import { GISCUS_REPO, GISCUS_REPO_ID, GISCUS_CATEGORY, GISCUS_CATEGORY_ID } from
 ---
 
 <section>
-    <script src="https://giscus.app/client.js"
-        data-repo={{GISCUS_REPO}}
-        data-repo-id={{GISCUS_REPO_ID}}
-        data-category={{GISCUS_CATEGORY}}
-        data-category-id={{GISCUS_CATEGORY_ID}}
+    <script is:inline src="https://giscus.app/client.js"
+        data-repo={GISCUS_REPO}
+        data-repo-id={GISCUS_REPO_ID}
+        data-category={GISCUS_CATEGORY}
+        data-category-id={GISCUS_CATEGORY_ID}
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
