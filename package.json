@@ -16,9 +16,11 @@
     "@astrojs/mdx": "^5.0.6",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
+    "@tailwindcss/vite": "^4.3.0",
     "@yeskunall/astro-umami": "0.0.8",
     "astro": "^6.3.3",
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0"
