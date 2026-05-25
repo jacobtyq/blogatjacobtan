@@ -1,6 +1,5 @@
 ---
 import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
 import ThemeIcon from './ThemeIcon.astro';
 ---
 
@@ -9,18 +8,16 @@ import ThemeIcon from './ThemeIcon.astro';
 		<h2 class="m-0 text-[1em]">
 			<a href="/" class="inline-block no-underline py-[1em] px-[0.5em] border-b-4 border-b-transparent text-[rgb(var(--black))] dark:text-[rgb(210,218,232)]">{SITE_TITLE}</a>
 		</h2>
-		<div class="internal-links">
-			<HeaderLink href="/" class="text-[rgb(var(--black))] dark:text-[rgb(210,218,232)]">Blog</HeaderLink>
-		</div>
-		<div class="hidden sm:flex">
+		<div class="flex gap-[2rem]">
 			<ThemeIcon />
+			<div class="hidden sm:flex">
 			<a href="https://x.com/jacobtyq" target="_blank" class="flex py-[1em] px-[0.5em] border-b-4 border-b-transparent no-underline text-[rgb(var(--black))] dark:text-[rgb(210,218,232)]">
 				<span class="sr-only">Follow Jacob on X</span>
 				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" aria-hidden="true" viewBox="0 0 16 16">
 					<path fill="currentColor" d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>
 			</a>
 			<a href="https://github.com/jacobtyq/" target="_blank" class="flex py-[1em] px-[0.5em] border-b-4 border-b-transparent no-underline text-[rgb(var(--black))] dark:text-[rgb(210,218,232)]">
-				<span class="sr-only">Go to Jacob's GitHub</span>
+				<span class="sr-only">Go to Jacob's GitsHub</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
 						fill="currentColor"
@@ -28,6 +25,8 @@ import ThemeIcon from './ThemeIcon.astro';
 					></path></svg
 				>
 			</a>
+
+			</div>
 		</div>
 	</nav>
 </header>
