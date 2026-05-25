@@ -26,13 +26,20 @@
 		margin: 0;
 		padding: 0;
 		text-align: left;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		background: linear-gradient(rgba(229, 233, 240, 50%), #fff) no-repeat;
 		background-size: 100% 600px;
 		word-wrap: break-word;
 		overflow-wrap: break-word;
 		color: rgb(var(--gray-dark));
 		font-size: 20px;
 		line-height: 1.7;
+		@apply dark:text-[rgb(180,195,220)];
+		&:where(.dark, .dark *) {
+			background-color: #0d0f1a;
+			background-image: linear-gradient(rgba(15, 18, 28, 80%), #0d0f1a);
+			background-repeat: no-repeat;
+			background-size: 100% 600px;
+		}
 	}
 	main {
 		width: 720px;
@@ -50,6 +57,7 @@
 		color: rgb(var(--black));
 		line-height: 1.2;
 		font-weight: bold;
+		@apply dark:text-[rgb(210,218,232)];
 	}
 	h1 {
 		font-size: 3.052em;
@@ -72,9 +80,11 @@
 	}
 	a {
 		color: var(--accent);
+		@apply dark:text-[#818cf8];
 	}
 	a:hover {
 		color: var(--accent);
+		@apply dark:text-[#818cf8];
 	}
 	p {
 		margin: 1em 0;
@@ -112,10 +122,12 @@
 		padding: 2px 5px;
 		background-color: rgb(var(--gray-light));
 		border-radius: 2px;
+		@apply dark:bg-[rgb(35,40,58)] dark:text-[rgb(210,218,232)];
 	}
 	pre {
 		padding: 1.5em;
 		border-radius: 8px;
+		@apply dark:bg-[rgb(25,28,45)];
 	}
 	pre > code {
 		all: unset;
@@ -125,10 +137,12 @@
 		padding: 0 0 0 20px;
 		margin: 0;
 		font-size: 1.333em;
+		@apply dark:border-[#818cf8];
 	}
 	hr {
 		border: none;
 		border-top: 1px solid rgb(var(--gray-light));
+		@apply dark:border-t-[rgb(55,62,85)];
 	}
 	@media (max-width: 720px) {
 		body {
@@ -138,4 +152,29 @@
 			padding: 1em;
 		}
 	}
+}
+
+::view-transition-group(root) {
+  animation-timing-function: var(--expo-out);
+}
+
+::view-transition-new(root) {
+  mask: url('/view-transition.svg') top left / 0 no-repeat;
+  mask-origin: top left;
+  animation: scale 1.5s;
+  animation-fill-mode: both;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: scale 1.5s;
+  animation-fill-mode: both;
+  z-index: -1;
+  transform-origin: top left;
+}
+
+@keyframes scale {
+  to {
+    mask-size: 200vmax;
+  }
 }

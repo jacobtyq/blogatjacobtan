@@ -23,9 +23,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				<div class="w-full">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="block mx-auto rounded-xl shadow-[var(--box-shadow)]" />}
 				</div>
-				<div class="prose w-[calc(720px+2em)] max-w-full mx-auto p-[1em] text-[rgb(var(--gray-dark))]">
+				<div class="prose w-[calc(720px+2em)] max-w-full mx-auto p-[1em] text-[rgb(var(--gray-dark))] dark:text-[rgb(180,195,220)]">
 					<div class="mb-[1em] py-[1em] text-center leading-none">
-						<div class="mb-[0.5em] text-[rgb(var(--gray))]">
+						<div class="mb-[0.5em] text-[rgb(var(--gray))] dark:text-[rgb(140,155,190)]">
 							<FormattedDate date={pubDate} />
 							{
 								updatedDate && (
