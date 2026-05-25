@@ -49,6 +49,7 @@
 		margin: 0 0 0.5rem 0;
 		color: rgb(var(--black));
 		line-height: 1.2;
+		font-weight: bold;
 	}
 	h1 {
 		font-size: 3.052em;
@@ -76,10 +77,21 @@
 		color: var(--accent);
 	}
 	p {
-		margin-bottom: 1em;
+		margin: 1em 0;
 	}
 	.prose p {
 		margin-bottom: 2em;
+	}
+	ul,
+	ol {
+		margin: 1em 0;
+		padding-inline-start: 40px;
+	}
+	ul {
+		list-style-type: disc;
+	}
+	ol {
+		list-style-type: decimal;
 	}
 	textarea {
 		width: 100%;
