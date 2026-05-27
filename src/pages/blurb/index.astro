@@ -19,7 +19,7 @@ const posts = (await getCollection('blurb')).sort(
 	</head>
 	<body>
 		<Header />
-		<main class="w-[960px] grid grid-cols-[1fr_3fr] gap-4">
+		<main class="w-[960px] grid grid-row-[1fr_auto] gap-4 sm:grid-cols-[1fr_3fr]">
 			<section>
 				<Nav />
 			</section>            
