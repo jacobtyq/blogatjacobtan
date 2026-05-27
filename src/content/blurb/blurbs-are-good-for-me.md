@@ -1,6 +1,7 @@
 ---
 title: The first blurb of many?
 pubDate: '26 May 2026'
+permalink: the-first-blurb-of-many
 ---
 
 I've switched from Hashnode to Astro. This is possibly the first blurb of many that do not fit the long form format of an blog post. 

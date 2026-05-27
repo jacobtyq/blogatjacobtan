@@ -25,3 +25,10 @@ test('blurb – mobile dark @visual @dark', async ({ page }) => {
   await page.goto(BLURB);
   await expect(page).toHaveScreenshot('blurb-mobile-dark.png', { fullPage: true });
 });
+
+test('permalink has correct href and aria-label', async ({ page }) => {
+  await page.goto(BLURB);
+  const permalink = page.locator('a[aria-label]').first();
+  await expect(permalink).toHaveAttribute('href', /#/);
+  await expect(permalink).toHaveAttribute('aria-label', 'Permalink to this blurb');
+});

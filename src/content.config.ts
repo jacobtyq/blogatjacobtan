@@ -19,11 +19,12 @@ const blog = defineCollection({
 
 const blurb = defineCollection({
   loader: glob({ base: './src/content/blurb', pattern: '**/*.{md,mdx}' }),
-  schema: ({ image }) =>
+  schema: () =>
     z.object({
       title: z.string(),
       // Transform string to Date object
       pubDate: z.coerce.date(),
+      permalink: z.string().min(1, "Permalink is required"),
       updatedDate: z.coerce.date().optional(),
     }),  
 })
