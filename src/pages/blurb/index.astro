@@ -6,6 +6,7 @@ import FormattedDate from '@/components/FormattedDate.astro';
 import Header from '@/components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 import Nav from '@/components/Nav.astro';
+import PermaLink from '@/components/PermaLink.astro';
 
 const posts = (await getCollection('blurb')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -28,7 +29,7 @@ const posts = (await getCollection('blurb')).sort(
 					{
 						posts.map((post, i) => (
 							<li class={`w-full md:w-auto md:my-0 ${i === 0 ? 'mt-8 mb-0' : 'my-4'}`}>
-                                <h4 class="m-0 leading-none text-[rgb(var(--black))] dark:text-[rgb(210,218,232)] group-hover:text-[rgb(var(--accent))] dark:group-hover:text-[#818cf8] transition-colors duration-200">{post.data.title}</h4>
+                                <h4 class="m-0 leading-none text-[rgb(var(--black))] dark:text-[rgb(210,218,232)] group-hover:text-[rgb(var(--accent))] dark:group-hover:text-[#818cf8] transition-colors duration-200 flex items-center gap-2" id=`${post.data.permalink}`>{post.data.title} <PermaLink link=`${post.data.permalink}` label="Permalink to this blurb"/></h4>
                                 <p class="m-0 text-[rgb(var(--gray))] dark:text-[rgb(140,155,190)] group-hover:text-[rgb(var(--accent))] dark:group-hover:text-[#818cf8] transition-colors duration-200">
                                     <FormattedDate date={post.data.pubDate} />
                                 </p>
