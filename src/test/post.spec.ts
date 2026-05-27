@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const POST = '/celebrating-small-wins-the-importance-of-user-stories/';
+const POST = '/blog/celebrating-small-wins-the-importance-of-user-stories/';
 
 test('post – desktop light @visual', async ({ page }) => {
   await page.goto(POST);
