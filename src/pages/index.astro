@@ -1,15 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseHead from '@/components/BaseHead.astro';
 import Footer from '@/components/Footer.astro';
-import FormattedDate from '@/components/FormattedDate.astro';
 import Header from '@/components/Header.astro';
 import Nav from '@/components/Nav.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+import { Image } from 'astro:assets';
+import profilePic from '@assets/profile.jpg';
+
 ---
 
 <!doctype html>
@@ -23,21 +21,56 @@ const posts = (await getCollection('blog')).sort(
 			<section>
 				<Nav />
 			</section>
-			<section class="px-6 py-8">
-				<ul class="flex flex-col flex-wrap gap-[0.5em] md:gap-8 list-none m-0 p-0">
-					{
-						posts.map((post, i) => (
-							<li class={`w-full md:w-auto md:my-0 ${i === 0 ? 'mt-8 mb-0' : 'my-4'}`}>
-								<a href={`/blog/${post.id}/`} class="block no-underline group width-fit">
-									<h4 class="m-0 leading-none text-[rgb(var(--black))] dark:text-[rgb(210,218,232)] group-hover:text-[rgb(var(--accent))] dark:group-hover:text-[#818cf8] transition-colors duration-200">{post.data.title}</h4>
-									<p class="m-0 text-[rgb(var(--gray))] dark:text-[rgb(140,155,190)] group-hover:text-[rgb(var(--accent))] dark:group-hover:text-[#818cf8] transition-colors duration-200">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
+			<section class="sm:px-6 py-8">
+				<div class="flex gap-4 items-center">
+					<Image src={profilePic} alt="Headshot of Jacob" width={75} height={75} class="rounded-full" />
+					<h3 class="m-0">Hi, I'm Jacob 👋</h3>
+				</div>
+				<p>I am a Software Engineer based in Singapore working on user-facing software and scalable systems.</p>
+				<p>I spend most of my time working on <a href="https://sgparking.app/">SG Parking App</a>.</p>
+				<h4 class="pt-4">Community Projects</h4>
+				<ul role="list" class="divide-y divide-gray-200 my-6 p-0 dark:divide-gray-800 list-none">
+					<li class="py-4 first:pt-0 last:pb-0">
+						<div class="flex justify-between flex-col sm:flex-row pb-4 sm:pb-0">
+							<a href="https://sgparking.app/" class="text-xl font-bold">SG Parking App</a>
+							<span class="text-lg opacity-75">Sept 2025 - Present</span>
+						</div>
+						<span class="text-base text-zinc-500">VueJS, Maplibregl, Tailwind, Supabase, NodeJS</span>																		
+						<p>Involved in the building a platform for finding parking spots in Singapore.</p>
+					</li>					
+					<li class="py-4 first:pt-0 last:pb-0">
+						<div class="flex justify-between flex-col sm:flex-row pb-4 sm:pb-0">
+							<a href="https://cara.app/" class="text-xl font-bold">Cara</a>
+							<span class="text-lg opacity-75">Feb 2023 - Present</span>
+						</div>
+						<span class="text-base text-zinc-500">React, NextJS, Tailwind</span>																		
+						<p>Involved in the planning and feature development for a portfolio platform for artists.</p>
+					</li>
+					<li class="py-4 first:pt-0 last:pb-0">
+						<div class="flex justify-between flex-col sm:flex-row pb-4 sm:pb-0">
+							<a href="https://github.com/jacobtyq/export-figma-svg/" class="text-xl font-bold">Export Figma SVG</a>
+							<span class="text-lg opacity-75">July 2021 - Sept 2022</span>
+						</div>
+						<span class="text-base text-zinc-500">NodeJS</span>												
+						<p>Developed a plugin to easily mass-export SVGs from Figma.</p>
+					</li>
+					<li class="py-4 first:pt-0 last:pb-0">
+						<div class="flex justify-between flex-col sm:flex-row pb-4 sm:pb-0">
+							<a href="https://github.com/jobsgowhere/jobsgowhere/" class="text-xl font-bold">Jobsgowhere</a>
+							<span class="text-lg opacity-75">2021 - 2022</span>
+						</div>
+						<span class="text-base text-zinc-500">React, Go</span>						
+						<p>Involved in feature development and code reviews for a community-driven initiative.</p>
+					</li>
+					<li class="py-4 first:pt-0 last:pb-0">
+						<div class="flex justify-between flex-col sm:flex-row pb-4 sm:pb-0">
+							<p class="text-xl font-bold m-0">Junior Dev SG</p>
+							<span class="text-lg opacity-75">Aug 2019 - May 2023</span>
+						</div>
+						<span class="text-base text-zinc-500">Mentor, Logistics, Leadership Team</span>
+						<p>Structured mentoring sessions focusing on visibility and stakeholder management for a team of six Junior Developers.</p>
+					</li>															
+				</ul>			
 			</section>
 		</main>
 		<Footer />
