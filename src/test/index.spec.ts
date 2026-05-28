@@ -24,7 +24,24 @@ test('home – mobile dark @visual @dark', async ({ page }) => {
   await expect(page).toHaveScreenshot('home-mobile-dark.png', { fullPage: true });
 });
 
+test('home - profile pic has alt text', async ({ page }) => {
+  await page.goto('/');
+  const image = page.getByAltText('Headshot of Jacob');
+  await expect(image).toBeVisible();
+})
+
+test('home - profile pic has loaded', async ({ page }) => {
+  await page.goto('/');
+  const image = page.getByAltText('Headshot of Jacob');
+  const isLoaded = await image.evaluate((img) => {
+    return (img as HTMLImageElement).complete && 
+           (img as HTMLImageElement).naturalWidth > 0;
+  });
+
+  expect(isLoaded).toBe(true);
+})
+
 test('meta is correct', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveTitle("Jacob's Blog");
+  await expect(page).toHaveTitle("Jacob Tan");
 });
