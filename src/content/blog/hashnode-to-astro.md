@@ -13,7 +13,7 @@ The biggest question remains: Why shift from Hashnode to Astro?
 
 #### The Shift
 
-When I wanted to write about my homelab journey, I realized Hashnode had quietly removed their free access to Graph API, which I was using to display my posts on my site. Also, I came across [posts](https://www.reddit.com/r/hashnode/comments/1lvp6bt/it_might_be_time_to_migrate_your_Hashnode_blog/) the Hashnode subreddit with mentions that it was probably best to migrate from Hashnode due to dwindling support and features being deprecated. This led me to quickly scramble for a new solution, hopefully a more permanent one.
+When I wanted to write about [my homelab journey](blog/my-homelab-journey/), I realized Hashnode had quietly removed their free access to Graph API, which I was using to display my posts on my site. Also, I came across [posts](https://www.reddit.com/r/hashnode/comments/1lvp6bt/it_might_be_time_to_migrate_your_Hashnode_blog/) the Hashnode subreddit with mentions that it was probably best to migrate from Hashnode due to dwindling support and features being deprecated. This led me to quickly scramble for a new solution, hopefully a more permanent one.
 
 I previously used Astro during a [pair programming with miccheng](https://github.com/miccheng/astro-tutorial), and liked that it gives you multiple options for templating (not just JSX). Also, it has some [pretty good guided examples](https://docs.astro.build/en/recipes/) on adding features to your Astro project. Finally, I could have it deploy on GitHub pages instead of a Digitalocean droplet.
 
