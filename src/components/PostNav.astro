@@ -1,0 +1,19 @@
+---
+import { type CollectionEntry } from 'astro:content';
+
+type Props = {
+	nextPost: CollectionEntry<'blog'> | null;
+	prevPost: CollectionEntry<'blog'> | null;
+ };
+
+const { nextPost, prevPost } = Astro.props;
+
+---
+<nav class="flex flex-col sm:flex-row justify-between mt-2 gap-4">
+    {prevPost && (
+      <a href={`/blog/${prevPost.id}`}>← {prevPost.data.title}</a>
+    )}
+    {nextPost && (
+      <a href={`/blog/${nextPost.id}`}>{nextPost.data.title} →</a>
+    )}
+</nav>
