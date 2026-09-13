@@ -11,7 +11,7 @@ const { VITE_UMAMI_ID } = loadEnv(process.env.NODE_ENV ?? '', process.cwd(), '')
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://blog.jacobtan.co',
+  site: 'https://jacobtan.co',
   integrations: [mdx(), sitemap(), umami({ id: VITE_UMAMI_ID })],
   env: {
     schema: {
